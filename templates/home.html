@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="card">
+
+    <h2> Air Quality Checker</h2>
+
+    <input type="text" id="city" placeholder="Enter city or pincode">
+
+    <select id="age">
+        <option>Child</option>
+        <option>Adult</option>
+        <option>Elderly</option>
+    </select>
+
+    <select id="health">
+        <option>None</option>
+        <option>Asthma</option>
+        <option>Heart Issue</option>
+    </select>
+
+    <button onclick="getAQI()">Check Air Quality</button>
+
+</div>
+
+<!-- OUTPUT -->
+<div class="card result">
+
+    <h1 id="aqi">--</h1>
+    <h3 id="risk">Risk Level</h3>
+
+    <p id="impact"></p>
+    <p id="advice"></p>
+
+</div>
+
+{% endblock %}
+

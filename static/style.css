@@ -1,0 +1,57 @@
+body {
+    margin: 0;
+    font-family: Arial;
+    background: linear-gradient(to right, #56ccf2, #2f80ed);
+    color: white;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 30px;
+    background: rgba(0,0,0,0.2);
+}
+
+.menu a {
+    margin-left: 15px;
+    color: white;
+    text-decoration: none;
+}
+
+/* Content */
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 40px;
+}
+
+/* Cards */
+.card {
+    background: rgba(255,255,255,0.2);
+    padding: 20px;
+    border-radius: 15px;
+    margin: 15px;
+    width: 300px;
+    text-align: center;
+}
+
+/* Inputs */
+input, select {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border-radius: 8px;
+    border: none;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background: white;
+    color: black;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}

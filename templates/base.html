@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AQI App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<div class="navbar">
+    <h2>AQI App</h2>
+    <div class="menu">
+        <a href="/">Home</a>
+        <a href="/dashboard">Dashboard</a>
+        <a href="/insights">AI Insights</a>
+        <a href="/trends">Trends</a>
+        <a href="/about">About</a>
+    </div>
+</div>
+
+<!-- PAGE CONTENT -->
+<div class="content">
+    {% block content %}{% endblock %}
+</div>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>
