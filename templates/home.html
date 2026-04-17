@@ -1,39 +1,41 @@
 {% extends "base.html" %}
 
 {% block content %}
-
 <div class="card">
+    <h2> SmartAQI </h2>
+    <input type="text" id="city" placeholder="Enter city ">
 
-    <h2> Air Quality Checker</h2>
-
-    <input type="text" id="city" placeholder="Enter city or pincode">
-
+    <label>Age Group:</label>
     <select id="age">
-        <option>Child</option>
-        <option>Adult</option>
-        <option>Elderly</option>
+        <option value="Adult">Adult (18-60)</option>
+        <option value="Child">Child (<18)</option>
+        <option value="Elderly">Elderly (>60)</option>
     </select>
 
+    <label>Health Conditions:</label>
     <select id="health">
-        <option>None</option>
-        <option>Asthma</option>
-        <option>Heart Issue</option>
+        <option value="None">None</option>
+        <option value="Asthma">Asthma / Respiratory</option>
+        <option value="Heart Issue">Heart Issue</option>
     </select>
 
-    <button onclick="getAQI()">Check Air Quality</button>
-
+   <button id="checkBtn" type="button" onclick="getAQI()">Check Air Quality</button>
 </div>
 
-<!-- OUTPUT -->
-<div class="card result">
-
+<div class="card" id="resultCard">
     <h1 id="aqi">--</h1>
-    <h3 id="risk">Risk Level</h3>
+    <h3 id="risk">Waiting for Input...</h3>
+    
+    <hr style="border: 0.5px solid rgba(255,255,255,0.1)">
+    
+    <p><strong>Pollutant Breakdown:</strong></p>
+    <p id="impact" style="font-size: 0.9em;"></p>
+    
+    <p><strong>Personalized Advice:</strong></p>
+    <p id="advice" style="font-weight: bold; color: #fff;"></p>
 
-    <p id="impact"></p>
-    <p id="advice"></p>
-
+    <canvas id="aqiChart" style="margin-top: 20px;"></canvas>
 </div>
 
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 {% endblock %}
-

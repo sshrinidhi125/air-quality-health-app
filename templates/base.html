@@ -1,30 +1,32 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>AQI App</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Health AQI Translator</title>
+    <style>
+        body {
+            margin: 0; font-family: 'Segoe UI', system-ui;
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            color: white; min-height: 100vh; transition: background 1s ease;
+        }
+        .navbar { padding: 20px; background: rgba(0,0,0,0.2); text-align: center; }
+        .content { display: flex; justify-content: center; flex-wrap: wrap; padding: 30px; gap: 25px; }
+        .card {
+            background: rgba(255,255,255,0.18); backdrop-filter: blur(12px);
+            padding: 30px; border-radius: 20px; width: 340px; text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.25); border: 1px solid rgba(255,255,255,0.1);
+        }
+        input, select { width: 100%; padding: 12px; margin: 10px 0; border-radius: 10px; border: none; font-size: 14px; }
+        label { font-size: 0.8em; font-weight: bold; text-transform: uppercase; display: block; text-align: left; margin-top: 10px; opacity: 0.8; }
+        button {
+            width: 100%; padding: 15px; background: white; color: #1e3a8a;
+            border: none; border-radius: 12px; font-weight: bold; cursor: pointer; transition: 0.3s;
+        }
+        button:hover { background: #f0f0f0; transform: scale(1.02); }
+    </style>
 </head>
-
 <body>
-
-<!-- NAVBAR -->
-<div class="navbar">
-    <h2>AQI App</h2>
-    <div class="menu">
-        <a href="/">Home</a>
-        <a href="/dashboard">Dashboard</a>
-        <a href="/insights">AI Insights</a>
-        <a href="/trends">Trends</a>
-        <a href="/about">About</a>
-    </div>
-</div>
-
-<!-- PAGE CONTENT -->
-<div class="content">
-    {% block content %}{% endblock %}
-</div>
-
-<script src="{{ url_for('static', filename='script.js') }}"></script>
-
+    <div class="navbar"><h2>🌫 AQI Health Risk Translator</h2></div>
+    <div class="content">{% block content %}{% endblock %}</div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 </html>
